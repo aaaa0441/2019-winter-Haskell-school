@@ -49,5 +49,5 @@ hanoi4 1 a b _ _
   = [(a, b)]
 hanoi4 n a b c d
   = hanoi4 (n - 2) a c d b  
-  ++ [(a, d)] ++ [(a, b)] ++ [(d, b)]
+  ++ [(a, d), (a, b), (d, b)]
   ++ hanoi4 (n - 2) c b a d 
