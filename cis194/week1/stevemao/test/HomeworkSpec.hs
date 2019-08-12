@@ -50,3 +50,7 @@ spec = do
   describe "hanoi" $ do
     it "returns correct steps" $
      hanoi 2 "a" "b" "c" `shouldBe` [("a","c"), ("a","b"), ("c","b")]
+
+  describe "hanoi4" $ do
+    it "returns correct steps" $
+     hanoi4 3 "a" "b" "c" `shouldBe` [("a","c"), ("a","d"), ("a","b"), ("d", "b"), ("c", "b")]
