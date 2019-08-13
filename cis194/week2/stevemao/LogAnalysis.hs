@@ -8,3 +8,6 @@ parseMessage a = case head . words $ a of
   "W" -> LogMessage Warning (read ((words a)!!1) :: Int) $ unwords . drop 1 . words $ a
   "E" -> LogMessage (Error (read ((words a)!!1) :: Int)) (read ((words a)!!1) :: Int) $ unwords . drop 2 . words $ a
   _   -> Unknown a
+
+parse :: String -> [LogMessage]
+parse = fmap parseMessage . lines
